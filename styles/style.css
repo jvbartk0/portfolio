@@ -1,0 +1,616 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    
+}
+
+:root{
+    --primaria-cor: #4f46e5;
+    --secundaria-cor: #7c3aed;
+    --escuro-cor: #0f172a;
+    --maisEscuro-cor: #0a0f1c;
+    --claro-cor: #e2e8f0;
+    --vidro-cor: rgba(255, 255, 255, 0.1);
+}
+
+body{
+    background-color: var(--escuro-cor);
+    color: var(--claro-cor);
+
+
+}
+.navegacao{
+    position: fixed;
+    background:rgba(26, 41, 75, 0.308);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.menu-link{
+    color: var(--claro-cor);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.4rem;
+    
+}
+
+.menu-link::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primaria-cor);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-link:hover::after{
+    width: 100%;
+}
+
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto-perfil{
+    width: 400px;
+    height: auto;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    border-radius: 50%;
+    border: 4px solid var(--vidro-cor);
+    animation: flutuar 3s ease-in-out infinite;
+    
+}
+
+h1{
+    font-size: 3.5rem;
+    color: var(--primaria-cor);
+    font-weight: bold;
+    margin: 20px 0 5px;
+}
+
+.cabecalho-subtitulo{
+    font-size: 1.5rem;
+    color: var(--claro-cor);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.sobre{
+    padding: 6rem 2rem;
+    
+    
+
+
+    
+}
+
+.sobre-titulo{
+    font-size: 3rem;
+    color: var(--claro-cor);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sobre-box{
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro-cor);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+
+}
+
+.sobre-paragrafo{
+    text-align: center;
+    font-size: 1.5rem;
+    
+
+}
+
+.projetos{
+
+    padding: 6rem 2rem;
+    min-height: 100vh;
+}
+
+.container-projetos{
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.card{
+    position: relative;
+    width: 350px;
+    height: 300px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vidro-cor);
+    border-radius: 20px;
+    
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.card:hover{
+    height: 400px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+}
+
+.card .caixaImg{
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    border-radius: 12px;
+    top: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.caixaImg img{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.card .conteudo{
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    height: 35px;
+   overflow: hidden;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    padding: 0 10px;
+}
+
+.titulo-projeto{
+    color: var(--claro-cor);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    
+}
+
+.card:hover .caixaImg{
+    top: -70px;
+    scale: .75;
+   box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+}
+.card:hover .conteudo{
+    top: 150px;  
+    height: 250px;
+}
+
+
+.conteudo p{
+    color: var(--claro-cor);
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 10px;
+    
+}
+
+.conteudo a{
+    display: inline-block;
+    background: var(--secundaria-cor) ;
+    text-decoration: none;
+    color: var(--claro-cor);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: background 0.3s ease-in-out;
+    
+}
+
+.conteudo a:hover{
+    background: var(--primaria-cor);
+}
+
+.titulo-secaoprojetos{
+    font-size: 3rem;
+    color: var(--claro-cor);
+    text-align: center;
+    
+}
+
+.contatos{
+    padding: 6rem 2rem;
+    
+}
+
+.contatos-titulo{
+    font-size: 3rem;
+    color: var(--claro-cor);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.formulario-contato{
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vidro-cor);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+}
+
+.campo-form{
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--claro-cor);
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid var(--vidro-cor);
+    transition: border 0.3s ease-in-out;
+
+
+}
+.grupo-form{
+    margin-bottom: 1.5rem;
+
+
+}
+
+.campo-form:focus{
+    border: 1px solid var(--primaria-cor);
+}
+
+.botao-form{
+    background: linear-gradient(45deg, var(--primaria-cor), var(--secundaria-cor));
+    color: var(--claro-cor);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.botao-form:hover{
+    background: linear-gradient(45deg, var(--secundaria-cor), var(--primaria-cor));
+    box-shadow: 0 0 15px rgba(124, 58, 173, 0.5);
+    transform: translateY(-4px);
+}
+
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.particulas{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 2px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moverParticulas 10s linear infinite;
+}
+
+@keyframes moverParticulas {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+.links{
+    padding: 2rem;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+    
+}
+
+.links a i{
+    font-size: 20px;
+    
+}
+
+.links a{
+    background: var(--secundaria-cor);
+    color: var(--claro-cor);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.links a:hover{
+    background: var(--primaria-cor);
+    scale: 1.2;
+}
+
+.habilidades{
+    padding: 6rem 2rem;
+    
+}
+
+.habilidades-titulo{
+    font-size: 3rem;
+    color: var(--claro-cor);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container-habilidades{
+    display: flex;
+    justify-content: center;
+    gap: 4rem 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.habilidade{
+    width: 120px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid var(--vidro-cor);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.icone-habilidade{
+    font-size: 4rem;
+    color: var(--primaria-cor);
+}
+
+.titulo-habilidade{
+    font-size: 1.5rem;
+    color: var(--claro-cor);
+    font-weight: 600;
+}
+
+.habilidade:hover{
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+.botao-cv{
+    margin-top: 20px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    color: var(--claro-cor);
+    background: linear-gradient(45deg, var(--primaria-cor), var(--secundaria-cor));
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    width: 200px;
+}
+.botao-cv:hover{
+    background: linear-gradient(45deg, var(--secundaria-cor), var(--primaria-cor));
+    box-shadow: 0 0 15px rgba(124, 58, 173, 0.5);
+    transform: translateY(-4px);
+}
+
+/* -----------------------------
+   HAMBURGER + MOBILE MENU
+   Adicione próximo ao bloco .navegacao (ou no final do arquivo)
+   ----------------------------- */
+
+/* Botão hamburguer (escondido em desktop) */
+.hamburger{
+  display: none; /* visível só em telas pequenas via media query */
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  z-index: 250;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* estrutura do ícone (3 linhas animadas) */
+.hamburger-box {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  width: 22px;
+  height: 2px;
+  background-color: var(--claro-cor);
+  border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform .25s ease, background-color .2s ease, opacity .2s ease;
+  box-shadow: 0 8px 0 0 var(--claro-cor), 0 -8px 0 0 var(--claro-cor);
+}
+
+/* hamburguer ativo -> transforma em X */
+.hamburger.is-active .hamburger-inner{
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: none;
+}
+.hamburger.is-active .hamburger-inner::after,
+.hamburger.is-active .hamburger-inner::before{
+  transform: translateX(-50%) rotate(-90deg);
+  top: 0;
+}
+.hamburger-inner::before,
+.hamburger-inner::after{
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--claro-cor);
+  border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform .25s ease, top .25s ease;
+}
+.hamburger-inner::before{ top: -8px; }
+.hamburger-inner::after{ top: 8px; }
+
+/* MOBILE MENU: mantém cor e opacidade parecida com .navegacao e blur */
+@media (max-width: 900px) {
+  .hamburger{ display: block; }
+
+  /* mantemos display:flex para desktop, aqui mudamos comportamento em mobile */
+  .menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 1.5rem 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 0;
+    z-index: 240;
+   
+    background: rgba(26, 41, 75, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .32s cubic-bezier(.2,.9,.25,1), opacity .28s ease;
+  }
+
+  
+  .menu li{
+    width: 100%;
+    text-align: center;
+    list-style: none;
+  }
+.menu-link{
+        display: inline-block;
+        width: auto;     /* deixa só do tamanho do texto */
+        margin: 0 auto;  /* centraliza o texto */
+    }
+  /* Classa quando estiver aberto (JS adiciona .open) */
+  .menu.open{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Ajustes de layout do header para mobile */
+  .foto-perfil{
+    width: 300px; /* reduz a foto no mobile */
+  }
+  h1{
+    font-size: 1.8rem;
+  }
+  .cabecalho-subtitulo{
+    font-size: 1rem;
+  }
+
+  /* Evitar que a barra fixa ocupe muito espaço do conteúdo (pequeno offset) */
+  main{
+    padding-top: 6.5rem;
+  }
+  .navegacao{
+  height: 70px;
+}
+
+
+}
+
+/* Segurança: se a largura for super pequena, ajustar ainda mais */
+@media (max-width: 420px){
+  .foto-perfil{ width: 300px; }
+  .menu .menu-link{ padding: 0.7rem; font-size: 0.95rem; }
+  .hamburger{ right: 1rem; top: 1rem; width: 40px; height: 40px;}
+  .navegacao{
+  height: 70px;
+}
+.menu-link{
+        display: inline-block;
+        width: auto;     /* deixa só do tamanho do texto */
+        margin: 0 auto;  /* centraliza o texto */
+    }
+
+}
